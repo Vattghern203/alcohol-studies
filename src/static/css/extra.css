@@ -1,0 +1,41 @@
+.form {
+    margin: 6.4rem 3.2rem;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+}
+
+.form__input {
+    font-size: large;
+    border: none;
+    padding: 2vmin 4vmin;
+    width: 60%;
+    border-radius: 1vmin;
+    grid-column: 1 / -1;
+    margin-bottom: 3.2rem;
+}
+
+.form__data {
+    font-size: large;
+    border: none;
+    padding: 2vmin 4vmin;
+    width: 60%;
+    border-radius: 1vmin;
+    grid-column: 1 / -1;
+    margin-bottom: 3.2rem;
+}
+
+.form__data:invalid {
+    border: rgb(172, 35, 35) 2px solid;
+}
+
+.form__data:valid {
+    border: rgb(172, 238, 205) 2px solid
+}
+
+.form__label {
+    font-size: 2rem;
+    margin: 1.6rem;
+    grid-column: 2 / 4;
+}

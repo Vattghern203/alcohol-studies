@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/extra.css">
+</head>
+<body class="font-sans-serif font-spacing-wide">
+    <header class="w-full">
+        <nav class="flex justify-center mt-32 px-64">
+            <ul class="flex align-center justify-between max-w-half w-full">
+                <li>
+                    <a class="hover:txt-purple-400 transition-colors visited:txt-white txt-white" href="#">about</a>
+                </li>
+                <li>
+                    <a class="hover:txt-purple-400 transition-colors visited:txt-white txt-white" href="#">infos</a>
+                </li>
+                <li id="cta-btn">
+                    <a class="bg-purple-600 px-24 py-8 rounded-peal txt-white hover:bg-purple-500 transition-colors" href="#">testar</a>
+                </li>
+                
+            </ul>
+        </nav>
+
+        <main class="flex align-center flex-col my-86">
+            <h2 class="font-2xl">Higher education checker</h2>
+            <form class="form" action="{{ url_for('predict') }}" method="post">
+
+                <label class="form__label" for="age">Age</label>
+                <input class="form__input form__data" name="age" type="number" placeholder="Age..." max="22" min="15" required>
+
+                <label class="form__label" for="age">Parent's Relation</label>
+                <select class="form__select form__data" name="parent-status" id="">
+                    <option value="T">Together</option>
+                    <option value="A">Apart</option>
+                </select>
+
+                <label class="form__label" for="mother-job">Mother's Job</label>
+                <select class="form__select form__data" name="mother-job" id="">
+                    <option value="at_home">At Home</option>
+                    <option value="health">Health</option>
+                    <option value="others">Others</option>
+                    <option value="services">Services</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+
+                <label class="form__label" for="father-job">Father's Job</label>
+                <select class="form__select form__data" name="father-job" id="">
+                    <option value="at_home">At Home</option>
+                    <option value="health">Health</option>
+                    <option value="others">Others</option>
+                    <option value="services">Services</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+
+                <label class="form__label" for="guardian">Guardian</label>
+                <select class="form__select form__data" name="guardian" id="">
+                    <option value="father">Mother</option>
+                    <option value="mother">Father</option>
+                    
+                </select>
+
+                <label class="form__label" for="study-time">Study Time</label>
+                <input class="form__input form__data" name="study-time" type="number" placeholder="Study Time 1 to 4..." max="4" min="1" required>
+
+                <label class="form__label" for="failures">Failures</label>
+                <input class="form__input form__data" name="failures" type="number" placeholder="Failures 0 to 3..." max="4" min="1" required>
+
+                <label class="form__label" for="internet">Internet Acces</label>
+                <select class="form__select form__data" name="internet" id="">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label class="form__label" for="age">Romantic partner</label>
+                <select class="form__select form__data" name="romantic" id="">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label class="form__label" for="famrel">Family Relationship</label>
+                <input class="form__input form__data" name="famrel" type="number" placeholder="Family relationship 1 to 5..." max="5" min="1" required>
+
+                <label class="form__label" for="freetime">Free Time</label>
+                <input class="form__input form__data" name="freetime" type="number" placeholder="Family relationship 1 to 5..." max="5" min="1" required>
+
+                <label class="form__label" for="goout">Go out</label>
+                <input class="form__input form__data" name="goout" type="number" placeholder="Go out 1 to 5..." max="5" min="1" required>
+
+                <label class="form__label" for="dalc">Alcohol Consume During Week Days</label>
+                <input class="form__input form__data" name="dalc" type="number" placeholder="Alcohol consume week days" max="5" min="1" required>
+
+                <label class="form__label" for="walc">Alcohol Consume During Weekends</label>
+                <input class="form__input form__data" name="walc" type="number" placeholder="Alcohol Consume In Weekends" max="5" min="1" required>
+
+                <label class="form__label" for="abseneces">Absences</label>
+                <input class="form__input form__data" name="abseneces" type="number" placeholder="Absences..." max="75" min="0" required>
+
+                <label class="form__label" for="g3">Grade 03</label>
+                <input class="form__input form__data" name="g3" type="number" placeholder="Final Grade (0-20)" max="20" min="0" required>
+
+
+                <button class="bg-emerald-500 cursor-pointer col-start-2 col-end-4 px-32 py-16 valid:bg-emerald-700 hover:bg-emerald-600 border-none rounded-peal" type="submit">Submit</button>
+            </form>
+        </main>
+    </header>
+</body>
+</html>
