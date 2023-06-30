@@ -4,24 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result</title>
-    <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/prediction.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
-<body>
-    <h1>Prediction Result</h1>
+<body class="font-2xl font-sans-serif min-h-screen p-64 flex flex-col justify-around">
+
+    <h1 class="font-2hg font-spacing-tigh font-800 col-span-full mx-auto">Prediction Result</h1>
 
     {% if prediction == "yes" %}
 
-        <section class="yes">
-            <p>The prediction is: Yes</p>
-        </section>
+    <section class="yes
+    min-h-half bg-gray-800 px-32 py-46 rounded-xl grid place-items-center gap-32">
+        <video class="rounded-2xl object-cover border-solid border-gray-700" 
+               src="../static/videos/yes.m4v"
+               autoplay loop muted
+        >
+        </video>
+
+        <p class="rounded-xl py-32 px-16 bg-gray-900">Yes, the boy is going to college.</p>
+    </section>
 
     {% else %}
 
-    <section class="no">
+    <section class="no
+    min-h-half bg-gray-800 px-32 py-46 rounded-xl grid place-items-center gap-32">
+        <video class="rounded-2xl object-cover border-solid border-gray-700" 
+               src="../static/videos/no.m4v"
+               autoplay loop muted
+        >
+        </video>
 
-        <p>The prediction is: No</p>
-
+        <p class="rounded-xl py-32 px-16 bg-gray-900">No, the boy just want to party.</p>
     </section>
     
     {% endif %}

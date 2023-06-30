@@ -1,6 +1,21 @@
 .yes {
-    background-image: url("../videos/yes.m4v");
+    background: url("../videos/yes.m4v");
     background-size: cover;
-    min-height: 100vh;
+}
+
+video {
+    aspect-ratio: 16 / 9;
+}
+
+video:-moz-loading {
     width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: black;
+}
+
+video::before {
+    display: block;
+    content: '';
+    padding-top: calc(100% * 2 / 3);
 }
